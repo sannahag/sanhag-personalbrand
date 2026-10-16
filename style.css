@@ -9,12 +9,12 @@
 
 /* 2 · Varumärket som variabler */
 :root {
-    --text: #141518;
-    --yta: #f8f6f0;
-    --yta-2: #ffffff;
-    --kant: #e6e0d2;
-    --primar: #141518;
-    --accent: #ff5400;
+    --text: #ffffff;
+    --yta: #141616;
+    --yta-2: #3D3C38;
+    --kant: #7F1D1A;
+    --primar: #A49F9D;
+    --accent: #7F1D1A;
     --knapptext: #0e0f12;
     --luft: 1.25rem;
     --radie: 20px;
@@ -28,7 +28,8 @@ html {
 
 body {
     margin: 0;
-    font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Google Sans Flex", sans-serif;
+    font-weight: 300;
     font-size: 1.0625rem;
     line-height: 1.65;
     color: var(--text);
@@ -59,7 +60,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
@@ -89,8 +91,8 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--luft);
-    padding: var(--luft);
+    gap: 0.5rem;
+    padding: 0.2rem var(--luft);
     background: var(--yta-2);
     border-bottom: 1px solid var(--kant);
     transition: background-color 0.25s ease, border-color 0.25s ease;
@@ -115,8 +117,8 @@ nav ul {
 nav a {
     display: inline-block;
     padding: 0.4rem 0.75rem;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.80rem;
+    font-weight: 500;
     text-decoration: none;
     color: var(--text);
     border-radius: 999px;
@@ -131,9 +133,9 @@ nav a:hover {
 
 /* 5 · Innehållsytan */
 main {
-    max-width: 72rem;
+    max-width: 90rem;
     margin: 0 auto;
-    padding: 0 var(--luft);
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
 }
 
 section {
@@ -146,21 +148,46 @@ section:last-of-type {
 }
 
 .intro {
-    padding-top: calc(var(--luft) * 3);
-    padding-bottom: calc(var(--luft) * 3);
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    /* Behåller textens nuvarande placering */
+    gap: 3rem;
+    min-height: 620px;
+    padding: 0;
 }
 
-.intro h2 {
-    font-size: clamp(1.85rem, 5vw, 3rem);
-    line-height: 1.1;
-    max-width: 22ch;
-    margin-bottom: 1rem;
+.intro-bild {
+    align-self: end;
+    height: auto;
+    overflow: visible;
+    border: none;
+    background: radial-gradient(ellipse at 55% 55%,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(255, 255, 255, 0.10) 40%,
+            rgba(255, 255, 255, 0) 72%);
 }
 
-.intro p {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    margin-bottom: 1.75rem;
+.intro-bild img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+/* På mindre skärmar hamnar bilden under texten */
+@media (max-width: 48rem) {
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro-bild {
+        height: auto;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 .knapp {
@@ -196,12 +223,15 @@ section:last-of-type {
 }
 
 #kontakt {
-    background: var(--yta-2);
-    padding: calc(var(--luft) * 2);
-    border-radius: var(--radie);
-    border: 1px solid var(--kant);
-    margin-top: calc(var(--luft) * 2);
-    margin-bottom: calc(var(--luft) * 2);
+    background: transparent;
+    /* ingen fyllning */
+    padding: 1rem 0;
+    /* mindre luft inuti */
+    border: none;
+    border-radius: 0;
+    /* rak ram */
+    margin: 1rem 0;
+    /* mindre luft utanför */
 }
 
 #kontakt a {
@@ -221,9 +251,9 @@ section:last-of-type {
 }
 
 .kort {
-    background: var(--yta-2);
-    padding: calc(var(--luft) * 1.5);
-    border: 1px solid var(--kant);
+    background: #3D3C38;
+    padding: calc(var(--luft) * 0.5);
+    border: none;
     border-radius: var(--radie);
     box-shadow: var(--skugga);
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -257,17 +287,52 @@ section:last-of-type {
     background-color: var(--kant);
 }
 
+#projekt .kort img {
+    cursor: zoom-in;
+}
+
+#bildvisare {
+    position: relative;
+    max-width: min(90vw, 1200px);
+    max-height: 90vh;
+    padding: 2.5rem 1rem 1rem;
+    border: none;
+    background: #141616;
+}
+
+#bildvisare::backdrop {
+    background: rgb(0 0 0 / 85%);
+}
+
+#bildvisare img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(90vh - 3.5rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.bildvisare-stang {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    padding: 0 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* 7 · Knappar och fokus */
 button {
     font: inherit;
-    font-size: 0.925rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 400;
     min-height: 44px;
-    padding: 0.55rem 1.2rem;
+    padding: 0.1rem 1.0rem;
     color: var(--text);
     background: var(--yta);
-    border: 1.5px solid var(--kant);
-    border-radius: 999px;
+    border: none;
+    border-radius: none;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -287,16 +352,12 @@ button:focus-visible,
 }
 
 footer {
-    padding: calc(var(--luft) * 2.5) var(--luft);
+    padding: 0.5rem 0rem;
     text-align: center;
     background: var(--yta-2);
     border-top: 1px solid var(--kant);
     font-size: 0.9rem;
-    opacity: 0.85;
-}
-
-footer p {
-    margin: 0 auto;
+    opacity: 0.60;
 }
 
 /* 8 · Större skärmar */
@@ -305,7 +366,7 @@ footer p {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: var(--luft) calc(var(--luft) * 2);
+        padding: 0.15rem calc(var(--luft) * 2);
     }
 
     h1 {
@@ -373,4 +434,66 @@ body.morkt .knapp {
 
 body.morkt .knapp:hover {
     box-shadow: 0 8px 24px rgba(255, 106, 38, 0.5);
+}
+
+/* Projektgalleri med bilder i olika format */
+#projekt .rutnat {
+    display: block;
+    columns: 4 220px;
+    column-gap: 1.25rem;
+}
+
+#projekt .kort {
+    display: inline-flex;
+    width: 100%;
+    margin: 0 0 1.25rem;
+    padding: 0.75rem;
+    break-inside: avoid;
+}
+
+#projekt .kort img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    margin-bottom: 0.6rem;
+}
+
+#projekt .kort h3 {
+    font-size: 0.7rem;
+    margin: 0 0 0.25rem;
+}
+
+#projekt .kort p {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #555;
+}
+
+#projekt .kort {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+#projekt .kort:hover {
+    transform: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#projekt .kort img {
+    border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+nav,
+button,
+.knapp {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
 }
