@@ -9,16 +9,16 @@
 
 /* 2 · Varumärket som variabler */
 :root {
-    --text: #ffffff;
+    --text: #F2EFE9;
     --yta: #141616;
-    --yta-2: #3D3C38;
-    --kant: #7F1D1A;
+    --yta-2: #1F1E1C;
+    --kant: transparent;
     --primar: #A49F9D;
     --accent: #7F1D1A;
-    --knapptext: #0e0f12;
+    --knapptext: #F2EFE9;
     --luft: 1.25rem;
     --radie: 20px;
-    --skugga: 0 8px 24px rgba(20, 21, 24, 0.06);
+    --skugga: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* 3 · Grundstil (mobilversionen först) */
@@ -52,6 +52,29 @@ h1 {
     font-size: 1.875rem;
     margin-bottom: 0.25rem;
     letter-spacing: -0.04em;
+}
+
+.intro-greeting,
+.intro-name {
+    display: block;
+}
+
+.intro-greeting {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+}
+
+.intro-name {
+    color: var(--text);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 1;
+}
+
+.intro-roll {
+    color: var(--accent);
+}
+
+.intro-studies {
+    color: var(--primar);
 }
 
 h2 {
@@ -133,14 +156,61 @@ nav a:hover {
 
 /* 5 · Innehållsytan */
 main {
-    max-width: 90rem;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 section {
-    padding: calc(var(--luft) * 2.5) 0;
+    padding: calc(var(--luft) * 2.5) clamp(1.5rem, 5vw, 5rem);
     border-bottom: 1px solid var(--kant);
+}
+
+#tjanster {
+    background-color: var(--yta-2);
+    padding: clamp(2rem, 3.2vw, 3rem) clamp(1.5rem, 5vw, 5rem) clamp(2.5rem, 4.4vw, 3.75rem);
+}
+
+.skills-heading {
+    margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.skills-heading h2 {
+    margin-bottom: 0.35rem;
+    color: var(--text);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.skills-heading p {
+    margin: 0;
+    color: var(--primar);
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.skills-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: clamp(2.5rem, 5vw, 4rem);
+    column-gap: clamp(3rem, 8vw, 7rem);
+    align-items: start;
+}
+
+.skill-group > h3 {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--accent);
+    color: var(--text);
+    font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+    letter-spacing: 0.12em;
+}
+
+.skill-group .rutnat {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
 }
 
 section:last-of-type {
@@ -154,23 +224,27 @@ section:last-of-type {
     /* Behåller textens nuvarande placering */
     gap: 3rem;
     min-height: 620px;
-    padding: 0;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    background: radial-gradient(ellipse 34rem 36rem at 72% 55%,
+            rgba(255, 255, 255, 0.10) 0%,
+            rgba(255, 255, 255, 0.04) 42%,
+            rgba(255, 255, 255, 0) 76%);
 }
 
 .intro-bild {
+    width: min(100%, 560px);
     align-self: end;
     height: auto;
+    justify-self: center;
     overflow: visible;
     border: none;
-    background: radial-gradient(ellipse at 55% 55%,
-            rgba(255, 255, 255, 0.22) 0%,
-            rgba(255, 255, 255, 0.10) 40%,
-            rgba(255, 255, 255, 0) 72%);
 }
 
 .intro-bild img {
     width: 100%;
+    max-width: 460px;
     height: auto;
+    margin-inline: auto;
     object-fit: contain;
     object-position: bottom;
 }
@@ -180,6 +254,10 @@ section:last-of-type {
     .intro {
         grid-template-columns: 1fr;
         gap: 2rem;
+        background: radial-gradient(ellipse 24rem 24rem at 50% 78%,
+                rgba(255, 255, 255, 0.10) 0%,
+                rgba(255, 255, 255, 0.04) 42%,
+                rgba(255, 255, 255, 0) 76%);
     }
 
     .intro-bild {
@@ -195,22 +273,29 @@ section:last-of-type {
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    padding: 0.85rem 1.85rem;
-    background: var(--accent);
-    color: var(--knapptext);
-    font-size: 1rem;
-    font-weight: 700;
+    padding: 0.55rem 1rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
     text-decoration: none;
     border-radius: 999px;
     letter-spacing: -0.01em;
-    box-shadow: 0 4px 14px rgba(255, 84, 0, 0.25);
+    box-shadow: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
+#visa-cv {
+    color: var(--text);
+}
+
 .knapp:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(255, 84, 0, 0.35);
-    color: var(--knapptext);
+    transform: none;
+    background: rgb(127 29 26 / 12%);
+    border-color: var(--accent);
+    box-shadow: none;
+    color: var(--accent);
 }
 
 #om img {
@@ -225,7 +310,7 @@ section:last-of-type {
 #kontakt {
     background: transparent;
     /* ingen fyllning */
-    padding: 1rem 0;
+    padding: 1rem clamp(1.5rem, 5vw, 5rem);
     /* mindre luft inuti */
     border: none;
     border-radius: 0;
@@ -239,6 +324,58 @@ section:last-of-type {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+
+.kontakt-form {
+    display: grid;
+    gap: 1rem;
+    width: min(100%, 42rem);
+    margin: 1.5rem 0;
+}
+
+.form-falt {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.form-falt label {
+    color: var(--primar);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-falt input,
+.form-falt textarea {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    color: var(--text);
+    background: var(--yta-2);
+    border: 1px solid var(--primar);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.form-falt input:focus,
+.form-falt textarea:focus {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.form-falt textarea {
+    resize: vertical;
+}
+
+.kontakt-form .knapp {
+    justify-self: start;
+    cursor: pointer;
+}
+
+.kontakt-status {
+    min-height: 1.5em;
+    margin: 0;
+    color: var(--primar);
+}
+
 
 /* 6 · Kort i ett rutnät */
 .rutnat {
@@ -272,6 +409,32 @@ section:last-of-type {
     letter-spacing: -0.02em;
 }
 
+#tjanster .kort {
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    max-width: 100%;
+    padding: 0.85rem 1.1rem;
+    background: transparent;
+    border: 1px solid var(--primar);
+    border-radius: 999px;
+    box-shadow: none;
+    text-align: center;
+}
+
+#tjanster .kort:hover {
+    transform: none;
+    background: rgb(255 255 255 / 8%);
+    border-color: var(--text);
+    box-shadow: none;
+}
+
+#tjanster .kort h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+}
+
 .kort p {
     margin-bottom: 0;
     font-size: 0.975rem;
@@ -292,7 +455,9 @@ section:last-of-type {
 }
 
 #bildvisare {
-    position: relative;
+    position: fixed;
+    inset: 0;
+    margin: auto;
     max-width: min(90vw, 1200px);
     max-height: 90vh;
     padding: 2.5rem 1rem 1rem;
@@ -311,6 +476,21 @@ section:last-of-type {
     width: auto;
     height: auto;
     object-fit: contain;
+}
+
+#bildvisare.cv-visning {
+    overflow: auto;
+}
+
+#bildvisare.cv-visning img {
+    cursor: zoom-in;
+}
+
+#bildvisare.cv-visning.cv-zoomad img {
+    width: min(80vw, 1100px);
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
 }
 
 .bildvisare-stang {
@@ -352,12 +532,16 @@ button:focus-visible,
 }
 
 footer {
-    padding: 0.5rem 0rem;
+    padding: 0.5rem clamp(1.5rem, 5vw, 5rem);
     text-align: center;
     background: var(--yta-2);
     border-top: 1px solid var(--kant);
     font-size: 0.9rem;
-    opacity: 0.60;
+    opacity: 0.90;
+}
+
+footer p {
+    margin-inline: auto;
 }
 
 /* 8 · Större skärmar */
@@ -380,6 +564,12 @@ footer {
     .rutnat {
         grid-template-columns: repeat(2, 1fr);
         gap: calc(var(--luft) * 1.5);
+    }
+
+    .skills-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: calc(var(--luft) * 2);
+        column-gap: clamp(4rem, 8vw, 8rem);
     }
 
     #om {
@@ -407,20 +597,17 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    #tjanster .rutnat {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 /* 9 · Mörkt läge: nya färger när body har klassen morkt */
 body.morkt {
-    --text: #f2efe9;
-    --yta: #0e0f12;
-    --yta-2: #17181e;
-    --kant: #2a2c36;
-    --primar: #ffffff;
-    --accent: #ff6a26;
-    --knapptext: #0e0f12;
+    --text: #F2EFE9;
+    --yta: #141616;
+    --yta-2: #1F1E1C;
+    --kant: transparent;
+    --primar: #A49F9D;
+    --accent: #7F1D1A;
+    --knapptext: #F2EFE9;
     --skugga: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
@@ -429,11 +616,11 @@ body.morkt .kort:hover {
 }
 
 body.morkt .knapp {
-    box-shadow: 0 4px 16px rgba(255, 106, 38, 0.35);
+    box-shadow: 0 4px 16px rgba(127, 29, 26, 0.4);
 }
 
 body.morkt .knapp:hover {
-    box-shadow: 0 8px 24px rgba(255, 106, 38, 0.5);
+    box-shadow: 0 8px 24px rgba(127, 29, 26, 0.55);
 }
 
 /* Projektgalleri med bilder i olika format */
@@ -467,7 +654,7 @@ body.morkt .knapp:hover {
 #projekt .kort p {
     font-size: 0.85rem;
     line-height: 1.45;
-    color: #555;
+    color: #A49F9D;
 }
 
 #projekt .kort {
