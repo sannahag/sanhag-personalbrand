@@ -35,7 +35,7 @@ kontaktForm.addEventListener("submit", async (event) => {
 
     try {
         const response = await fetch(
-            "https://api.hsforms.com/submissions/v3/integration/submit/149565903/b8b02d3a-8107-4ca2-90e4-0fe675359f3c",
+            "https://api.hsforms.com/submissions/v3/integration/submit/149565903/5b38959c-5e50-456f-a64a-23059b442c1a",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
