@@ -21,11 +21,6 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<dialog id="bildvisare">
-    <button class="bildvisare-stang" type="button" aria-label="Stäng">×</button>
-    <img src="" alt="">
-</dialog>
-
 <!--header-->
 
 <body>
@@ -49,53 +44,66 @@
 
         <section class="intro">
             <div class="intro-text">
-                <h1>HI, I'M<br>SANNA</h1>
+                <h1><span class="intro-greeting">HI, I'M</span><span class="intro-name">SANNA</span></h1>
                 <p class="intro-roll">DIGITAL MARKETING SPECIALIST · GOTHENBURG SWE</p>
+                <p class="intro-studies">ONGOING STUDIES @ IHM BUSINESS SCHOOL</p>
                 <p class="intro-beskrivning">
                     I am seeking a work placement in digital marketing (LIA internship). With a background in marketing
                     and graphic design, along with a strong ambition to launch the next chapter of my career I bring
                     creativity, initiative and a genuine passion for building and developing brands, with a particular
                     interest in optimization and content creation.
                 </p>
-                <a class="knapp" href="img/sannaCV.jpg" download>VIEW CV
-                </a>
+                <button class="knapp" id="visa-cv" type="button">VIEW CV</button>
             </div>
 
             <div class="intro-bild">
-                <img src="img/profilbild2.jpg" alt="Porträtt av Sanna Hagberg">
+                <img src="img/test.png" alt="Porträtt av Sanna Hagberg">
             </div>
         </section>
         <!--hero slut-->
 
         <!--skills section-->
         <section id="tjanster">
-            <h2>DIGITAL SKILLS</h2>
-            <ul class="rutnat">
-                <li class="kort">
-                    <h3>AI & TECH</h3>
-                </li>
-                <li class="kort">
-                    <h3>SEARCH ENGINE OPTIMIZATION</h3>
-                </li>
-                <li class="kort">
-                    <h3>PAID MEDIA</h3>
-                </li>
-                <li class="kort">
-                    <h3>CANVA</h3>
-                </li>
-                <li class="kort">
-                    <h3>ADOBE INDESIGN</h3>
-                </li>
-                <li class="kort">
-                    <h3>ADOBE ILLUSTRATOR</h3>
-                </li>
-                <li class="kort">
-                    <h3>ADOBE PHOTOSHOP</h3>
-                </li>
-                <li class="kort">
-                    <h3>FIGMA</h3>
-                </li>
-            </ul>
+            <div class="skills-heading">
+                <h2>SKILLS</h2>
+                <p>A mix of creative software and digital expertise.</p>
+            </div>
+            <div class="skills-layout">
+                <div class="skill-group">
+                    <h3>SOFTWARE</h3>
+                    <ul class="rutnat">
+                        <li class="kort">
+                            <h3>Adobe InDesign</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Adobe Illustrator</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Adobe Photoshop</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Figma</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Canva</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>DIGITAL</h3>
+                    <ul class="rutnat">
+                        <li class="kort">
+                            <h3>Search Engine Optimization</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>AI &amp; Tech</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Paid Media</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!--projekt section-->
@@ -107,7 +115,7 @@
                     <h3>CETASOL - Social Media Post</h3>
                 </article>
                 <article class="kort">
-                    <img src="img/timet-introduction1 copy.jpg"
+                    <img src="img/timet-introduction1 copy.png"
                         alt="Innehållskalender för en månad med inlägg markerade per kanal" width="600" height="400">
                     <h3>CETASOL - Social Media Post</h3>
                 </article>
@@ -120,7 +128,7 @@
                     <h3>CETASOL - Social Media Post</h3>
                 </article>
                 <article class="kort">
-                    <img src="img/sarna.jpg" alt="sarna flyer" width="600" height="400">
+                    <img src="img/sarna.jpeg" alt="sarna flyer" width="600" height="400">
                     <h3>HVONN - Flyer</h3>
                 </article>
                 <article class="kort">
@@ -128,28 +136,32 @@
                     <h3>CETASOL - Social Media Post</h3>
                 </article>
                 <article class="kort">
-                    <img src="img/manual-framsida.jpg" alt="10K" width="600" height="400">
+                    <img src="img/manual.jpg" alt="10K" width="600" height="400">
                     <h3>CETASOL - Digital Manual</h3>
                 </article>
                 <article class="kort">
-                    <img src="img/snåret75.jpg" alt="10K" width="600" height="400">
+                    <img src="img/snåret75.png" alt="10K" width="600" height="400">
                     <h3>HVONN - Can Label</h3>
                 </article>
                 <article class="kort">
-                    <img src="img/gryning.jpg" alt="10K" width="600" height="400">
+                    <img src="img/gryning.png" alt="10K" width="600" height="400">
                     <h3>HVONN - Can Label</h3>
                 </article>
                 <article class="kort">
                     <img src="img/miere.jpg" alt="10K" width="600" height="400">
                     <h3>HVONN - Brochure</h3>
-                    <article class="kort">
-                        <img src="img/haf.jpg" alt="10K" width="600" height="400">
-                        <h3>HVONN - Brochure</h3>
-                    </article>
-                    <article class="kort">
-                        <img src="img/snaret.jpg" alt="10K" width="600" height="400">
-                        <h3>HVONN - Brochure</h3>
-                    </article>
+                </article>
+                <article class="kort">
+                    <img src="img/haf.jpg" alt="10K" width="600" height="400">
+                    <h3>HVONN - Brochure</h3>
+                </article>
+                <article class="kort">
+                    <img src="img/snaret.jpg" alt="10K" width="600" height="400">
+                    <h3>HVONN - Brochure</h3>
+                </article>
+                <article class="kort">
+                    <img src="img/framsida-natur.jpg" alt="10K" width="600" height="400">
+                    <h3>HVONN - Brochure</h3>
                 </article>
             </div>
         </section>
@@ -158,6 +170,22 @@
         <!--kontakt section-->
         <section id="kontakt">
             <p>Feel free to send me an e-mail or connect with me on LinkedIn</p>
+            <form id="kontakt-form" class="kontakt-form">
+                <div class="form-falt">
+                    <label for="kontakt-namn">Name</label>
+                    <input id="kontakt-namn" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="form-falt">
+                    <label for="kontakt-epost">E-mail</label>
+                    <input id="kontakt-epost" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="form-falt">
+                    <label for="kontakt-meddelande">Message</label>
+                    <textarea id="kontakt-meddelande" name="message" rows="5" required></textarea>
+                </div>
+                <button class="knapp" type="submit">SEND MESSAGE</button>
+                <p id="kontakt-status" class="kontakt-status" role="status" aria-live="polite"></p>
+            </form>
             <p><a href="mailto:sanna-hagberg@hotmail.com">E-mail</a></p>
             <p><a href="https://www.linkedin.com/in/sanna-hagberg-74225533b/" target="_blank"
                     rel="noopener">LinkedIn</a>
@@ -171,6 +199,10 @@
         <p>© 2026 Sanna Hagberg · Designed and built using HTML, CSS & JavaScript.</p>
     </footer>
     <!--footer slut-->
+    <dialog id="bildvisare" tabindex="-1">
+        <button class="bildvisare-stang" type="button" aria-label="Stäng">×</button>
+        <img src="" alt="">
+    </dialog>
 </body>
 
 
