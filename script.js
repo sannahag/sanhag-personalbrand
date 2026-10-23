@@ -1,17 +1,3 @@
-const temaknapp = document.querySelector("#tema");
-temaknapp.hidden = false;
-
-function bytTema() {
-    document.body.classList.toggle("morkt");
-    if (document.body.classList.contains("morkt")) {
-        temaknapp.textContent = "Byt till ljust läge";
-    } else {
-        temaknapp.textContent = "Byt till mörkt läge";
-    }
-}
-
-temaknapp.addEventListener("click", bytTema);
-
 const kontaktForm = document.querySelector("#kontakt-form");
 const kontaktStatus = document.querySelector("#kontakt-status");
 kontaktForm.addEventListener("submit", async (event) => {
@@ -106,3 +92,17 @@ bildvisare.addEventListener("click", (event) => {
         bildvisare.close();
     }
 });
+
+const tillToppen = document.querySelector(".till-toppen");
+const visaTillToppenEfter = 400;
+
+function uppdateraTillToppen() {
+    tillToppen.hidden = window.scrollY < visaTillToppenEfter;
+}
+
+window.addEventListener("scroll", uppdateraTillToppen, { passive: true });
+tillToppen.addEventListener("click", () => {
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    window.scrollTo({ top: 0, behavior });
+});
+uppdateraTillToppen();
