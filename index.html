@@ -8,7 +8,8 @@
     <title>Sanna Hagberg – Digital marknadsförare i Göteborg</title>
     <meta name="description" content="Sanna Hagberg personlig portfolio/hemsida">
     <!-- Cookiebot consent banner -->
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="83751328-d236-43d3-8480-4d28d0c49bd7" data-blockingmode="auto" type="text/javascript"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="83751328-d236-43d3-8480-4d28d0c49bd7"
+        data-blockingmode="auto" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <!-- Google Tag Manager -->
@@ -25,7 +26,7 @@
 
 <!--header-->
 
-<body>
+<body id="toppen">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5WHFFH3" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -38,7 +39,6 @@
                 <li><a href="#kontakt">CONTACT</a></li>
             </ul>
         </nav>
-        <button id="tema" type="button" hidden>SWITCH TO LIGHT MODE</button>
     </header>
     <!--header slut-->
     <main>
@@ -46,16 +46,21 @@
 
         <section class="intro">
             <div class="intro-text">
-                <h1><span class="intro-greeting">HI, I'M</span><span class="intro-name">SANNA</span></h1>
-                <p class="intro-roll">DIGITAL MARKETING SPECIALIST · GOTHENBURG SWE</p>
+                <h1><span class="intro-greeting"></span><span class="intro-name">I'M SANNA</span></h1>
+                <p class="intro-roll">DIGITAL MARKETING SPECIALIST IN THE MAKING</p>
                 <p class="intro-studies">ONGOING STUDIES @ IHM BUSINESS SCHOOL</p>
-                <p class="intro-beskrivning">
-                    I am seeking a work placement in digital marketing (LIA internship). With a background in marketing
-                    and graphic design, along with a strong ambition to launch the next chapter of my career I bring
-                    creativity, initiative and a genuine passion for building and developing brands, with a particular
-                    interest in optimization and content creation.
+                <p class="intro-lia"><span aria-hidden="true">↳</span>NEXT CHAPTER: INTERNSHIP (LIA) · 15 MAR–6 JUN 2027
                 </p>
-                <button class="knapp" id="visa-cv" type="button">VIEW CV</button>
+                <p class="intro-beskrivning">
+                    With an educational background in marketing and graphic design along with a strong ambition to
+                    launch the next chapter of my career, I bring creativity, initiative and a genuine passion for
+                    building and developing brands, <strong>with a particular interest in optimization and content
+                        creation.</strong>
+                </p>
+                <div class="intro-actions">
+                    <button class="knapp" id="visa-cv" type="button">VIEW CV</button>
+                    <a class="knapp" href="mailto:sanna-hagberg@hotmail.com">SEND EMAIL</a>
+                </div>
             </div>
 
             <div class="intro-bild">
@@ -89,6 +94,15 @@
                         <li class="kort">
                             <h3>Canva</h3>
                         </li>
+                        <li class="kort">
+                            <h3>Office Word</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Office PowerPoint</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Office Excel</h3>
+                        </li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -103,6 +117,12 @@
                         <li class="kort">
                             <h3>Paid Media</h3>
                         </li>
+                        <li class="kort">
+                            <h3>Tracking & Analytics</h3>
+                        </li>
+                        <li class="kort">
+                            <h3>Content & Influencer Marketing</h3>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -111,6 +131,7 @@
         <!--projekt section-->
         <section id="projekt">
             <h2>SELECTED GRAPHIC WORKS</h2>
+            <p>From previous internships @ Cetasol and HVONN</p>
             <div class="rutnat">
                 <article class="kort">
                     <img src="img/digitaltwin2.jpg" alt="Inlägg för Cetasol om digitala tvillingar">
@@ -171,7 +192,9 @@
 
         <!--kontakt section-->
         <section id="kontakt">
-            <p>Feel free to send me an e-mail or connect with me on LinkedIn</p>
+            <p>Feel free to send me an E-mail or connect with me on <a
+                    href="https://www.linkedin.com/in/sanna-hagberg-74225533b/" target="_blank"
+                    rel="noopener">LinkedIn</a></p>
             <form id="kontakt-form" class="kontakt-form">
                 <div class="form-falt">
                     <label for="kontakt-namn">Name</label>
@@ -188,10 +211,6 @@
                 <button class="knapp" type="submit">SEND MESSAGE</button>
                 <p id="kontakt-status" class="kontakt-status" role="status" aria-live="polite"></p>
             </form>
-            <p><a href="mailto:sanna-hagberg@hotmail.com">E-mail</a></p>
-            <p><a href="https://www.linkedin.com/in/sanna-hagberg-74225533b/" target="_blank"
-                    rel="noopener">LinkedIn</a>
-            </p>
         </section>
     </main>
     <!--kontakt slut-->
@@ -201,6 +220,11 @@
         <p>© 2026 Sanna Hagberg · Designed and built using HTML, CSS & JavaScript.</p>
     </footer>
     <!--footer slut-->
+    <button class="knapp till-toppen" type="button" aria-label="Till sidans början" title="Till sidans början" hidden>
+        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="m5 14 7-7 7 7M12 8v11" />
+        </svg>
+    </button>
     <dialog id="bildvisare" tabindex="-1">
         <button class="bildvisare-stang" type="button" aria-label="Stäng">×</button>
         <img src="" alt="">
