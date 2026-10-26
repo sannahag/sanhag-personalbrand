@@ -363,13 +363,48 @@ section:last-of-type {
 
 /* På mindre skärmar hamnar bilden under texten */
 @media (max-width: 48rem) {
+    .skills-heading h2,
+    #projekt>h2 {
+        font-size: clamp(1.1rem, 5.6vw, 1.4rem);
+        white-space: nowrap;
+    }
+
+    .skills-heading p,
+    #projekt>p {
+        font-size: clamp(0.68rem, 3.5vw, 0.86rem);
+        white-space: nowrap;
+    }
+
+    nav ul {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    nav a {
+        padding: 0.4rem 0.25rem;
+        font-size: clamp(0.56rem, 2.7vw, 0.7rem);
+        white-space: nowrap;
+    }
+
+    .intro-lia {
+        font-size: clamp(0.53rem, 2.7vw, 0.7rem);
+        white-space: nowrap;
+    }
+
     .intro-roll {
-        font-size: clamp(0.64rem, 3.4vw, 1.4rem);
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .intro-roll-line {
+        display: block;
     }
 
     .intro {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
+        padding-bottom: 0.75rem;
         background: radial-gradient(ellipse 24rem 24rem at 50% 78%,
                 rgba(255, 255, 255, 0.10) 0%,
                 rgba(255, 255, 255, 0.04) 42%,
@@ -378,7 +413,7 @@ section:last-of-type {
 
     .intro-bild {
         height: auto;
-        max-width: 400px;
+        max-width: 320px;
         width: 100%;
         margin: 0 auto;
     }
